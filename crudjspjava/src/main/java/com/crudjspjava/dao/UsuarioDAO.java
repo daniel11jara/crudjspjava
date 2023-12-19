@@ -15,7 +15,9 @@ public class UsuarioDAO {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/crudjspjava", "root", "");
+			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/crudjspjava", "root", "admin");
+			
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
