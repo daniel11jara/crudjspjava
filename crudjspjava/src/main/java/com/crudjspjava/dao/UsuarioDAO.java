@@ -25,6 +25,31 @@ public class UsuarioDAO {
 		return conn;
 	}
 	
+	//aula 04
+	public static Usuario getRegistroById(int id) {
+		Usuario usuario = null;
+		
+		try {
+			Connection con = getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from usuario where id=?");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				usuario = new Usuario();
+				usuario.setId(rs.getInt("id"));
+				usuario.setNome(rs.getString("nome"));
+				usuario.setPassword(rs.getString("password"));
+				usuario.setEmail(rs.getString("email"));
+				usuario.setSexo(rs.getString("sexo"));
+				usuario.setPais(rs.getString("pais"));
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return usuario;
+	}
 	
 	//aula 02
 	public static List<Usuario> getAllUsuarios() {
