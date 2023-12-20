@@ -43,7 +43,7 @@
 		</c:forEach>
 	</table>
 	<br>
-	<a href = "#">Adicionar novo Usuario</a>
+	<a href = "addusuarioform.jsp">Adicionar novo Usuario</a>
 
 
 </body>
