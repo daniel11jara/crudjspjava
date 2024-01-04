@@ -13,19 +13,18 @@
 	<h1>Listagem de Usuario</h1>
 	<%
 	
-	String pageid = request.getParameter("page");
-	int id = Integer.parseInt(pageid);
-	int total  = 5;
+	//String pageid = request.getParameter("page");
+	//int id = Integer.parseInt(pageid);
+	//int total  = 5;
 	
-	if(id==1){
-		
-	}else {
-		id = id-1;
-		id = id * total;
-	}
+	//if(id==1){}
+	//else {
+	//	id = id-1;
+	//	id = id * total + 1;
+	//}
 	
-	//List<Usuario> list = UsuarioDAO.getAllUsuarios();
-	List<Usuario> list = UsuarioDAO.getRecords(id, total);
+	List<Usuario> list = UsuarioDAO.getAllUsuarios();
+	//List<Usuario> list = UsuarioDAO.getRecords(id, total);
 	request.setAttribute("list", list);
 	
 	%>
